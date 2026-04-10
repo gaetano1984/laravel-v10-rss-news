@@ -16,11 +16,13 @@ class NewsController extends Controller
             $title = $f->sentence();
             $body = $f->paragraphs(5);
             $excerpt = substr($body[0], 0, 100) . '...';
+            $img = $f->imageUrl(640, 480, 'city', true);
             array_push(
                 $news, [
                     'title' => $title,
                     'body' => $body,
-                    'excerpt' => $excerpt
+                    'excerpt' => $excerpt,
+                    'img' => $img
                 ]
             );
         }

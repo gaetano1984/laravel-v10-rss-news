@@ -1,23 +1,18 @@
 @extends('layout.layout')
 
-@section('main')
-    <div class="row">
-        <div class="col-md-12">
-            News!
-        </div>
-    </div> 
-    <div class="row">
-        @foreach($news as $k=>$new)
-            <!-- <div class="col-sm-4"> -->
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-                <div class="card ">
+@section('main') 
+    <div class="row g-4">        
+        @foreach($news as $n)
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
                     <div class="card-body">
-                        {{ $k }}
-                        <h5 class="card-title">{{$new['title']}}</h5>
-                        <p class="card-text">{{$new['excerpt']}}</p>  
+                        <h3 class="card-title">{{ $n['title'] }}</h3>
+                        <div class="card-text">
+                            {{ $n['excerpt'] }}
+                        </div>
                     </div>
                 </div>
             </div>
         @endforeach
-    </div>   
+    </div>
 @endsection
