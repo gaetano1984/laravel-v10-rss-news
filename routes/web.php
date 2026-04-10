@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('news', function(){
+/*Route::get('news', function(){
     return view('home');
-});
+});*/
+Route::get('news', [App\Http\Controllers\NewsController::class, 'news']);
